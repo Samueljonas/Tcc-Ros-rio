@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>O Inimigo Invisível - HQ</title>
+    <style>
+      /* Importando uma fonte estilo Comic */
+      @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:wght@400;700&display=swap");
+
+      :root {
+        --borda-externa: 4px solid #000;
+        --borda-interna: 2px solid #000;
+        --espacamento: 15px;
+        --cor-fundo: #1a1a1a;
+      }
+
+      body {
+        background-color: var(--cor-fundo);
+        margin: 0;
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .hq-container {
+        width: 210mm;
+        background-color: #fcfcfc; /* Um branco levemente "sujo" */
+        background-image: url("caminho/para/textura_papel_sutil.jpg"); /* Opcional: Adicione uma imagem de textura leve */
+        padding: 15mm;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+        box-sizing: border-box;
+      }
+
+      header {
+        text-align: center;
+        border-bottom: var(--borda-externa);
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+      }
+
+      h1 {
+        font-family: "Bangers", cursive;
+        font-size: 3.5rem;
+        margin: 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      p.subtitle {
+        margin: 5px 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+      }
+
+      /* Grid de Quadrinhos */
+      .galeria-hq {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--espacamento);
+      }
+
+      .quadro {
+        border: 5px solid #000; /* Borda mais grossa, estilo nanquim */
+        border-radius: 4px; /* Cantos levemente arredondados para um visual menos "rígido" */
+        position: relative;
+        background: #fff;
+        line-height: 0;
+        page-break-inside: avoid;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2); /* Sombra dura para efeito 3D 'pop' */
+      }
+      .quadro img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Modificadores de Layout */
+      .cheia {
+        grid-column: span 2;
+      } /* Ocupa a linha toda */
+      .grande {
+        grid-row: span 1;
+        grid-column: span 2;
+      }
+
+      footer {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 0.8rem;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+      }
+
+      /* Estilos de Impressão */
+      @media print {
+        body {
+          background: none;
+          padding: 0;
+        }
+        .hq-container {
+          box-shadow: none;
+          width: 100%;
+          padding: 10mm;
+        }
+        .btn-print {
+          display: none;
+        }
+        .quadro {
+          break-inside: avoid;
+        }
+      }
+
+      .btn-print {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 30px;
+        background: #e67e22;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: "Bangers", cursive;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn-print" onclick="window.print()">
+      IMPRIMIR HQ / SALVAR PDF
+    </button>
+
+    <div class="hq-container">
+      <header>
+        <p class="subtitle">Meningite e Vacinação</p>
+        <h1>O Inimigo Invisível</h1>
+      </header>
+
+      <div class="galeria-hq">
+        <div class="quadro cheia">
+          <img src="panel_images/p1.png" alt="O início da dor" />
+        </div>
+
+        <div class="quadro"><img src="panel_images/p2.png" /></div>
+        <div class="quadro"><img src="panel_images/p3.png" /></div>
+
+        <div class="quadro"><img src="panel_images/p4.jpg" /></div>
+        <div class="quadro"><img src="panel_images/p5.jpg" /></div>
+
+        <div class="quadro"><img src="panel_images/p6.jpg" /></div>
+        <div class="quadro"><img src="panel_images/p7.jpg" /></div>
+
+        <div class="quadro cheia"><img src="panel_images/p8.png" /></div>
+
+        <div class="quadro"><img src="panel_images/p9.jpg" /></div>
+        <div class="quadro"><img src="panel_images/p10.jpg" /></div>
+        <div class="quadro"><img src="panel_images/p11.png" /></div>
+        <div class="quadro"><img src="panel_images/p12.jpg" /></div>
+
+        <div class="quadro cheia"><img src="panel_images/p13.png" /></div>
+
+        <div class="quadro"><img src="panel_images/p14.jpg" /></div>
+        <div class="quadro"><img src="panel_images/p15.jpg" /></div>
+      </div>
+
+      <footer>
+        <p>Material Educativo — Prevenção Salva Vidas</p>
+      </footer>
+    </div>
+  </body>
+</html>
